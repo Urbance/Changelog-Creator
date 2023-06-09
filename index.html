@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changelog Creator: Web Edition</title>
+	<script language="javascript" type="text/javascript" src="javascript.js"></script>	
+</head>
+<body>
+	<h1>Changelog Creator: Web Edition</h1>
+	<form>
+		<label>Update Type:</label>
+		<input type="radio" name="updateType" value="Major">
+		<label for="updateType">Major</label>
+		<input type="radio" name="updateType" value="Minor">
+		<label for="minor">Minor</label>
+		<input type="radio" name="updateType" value="Patch">
+		<label for="updateType">Patch</label>
+		<input type="radio" name="updateType" id="updateTypePRE" value="PRE" onclick="foo()">
+		<label for="updateType">PRE</label>
+		<input type="text" id="preVersionNumberField" style="visibility: hidden; width: 30px;">
+	</form>
+	<br>
+	<label for="v1">Minecraft Version Kompatiblität: von</label>
+  	<select name="v1" id="v1">
+    	<option value="119">1.19</option>
+  	</select>
+  	<label for="v2">bis</label>
+  	<select name="v2" id="v2">
+    	<option value="120">1.20</option>
+    	<option value="empty">---</option>
+  	</select>
+  	<br>
+  	<br>
+  	<form>
+  		<label>Version:</label>
+		<input type="text" name="pluginVersion" id="pluginVersion">
+		<br>
+		<br>
+  		<label>Changelog:</label>
+  		<br>
+        <textarea id="changelogTextArea" name="changelogTextArea" cols="35" rows="4"></textarea> 	
+	</form>
+	<br>
+	<button onclick="getAndCopyPluginChangelog('discord')">Discord</button>
+	<button onclick="getAndCopyPluginChangelog('others')">GitHub | SpigotMC | Modrinth</button>
+</body>
+</html>
